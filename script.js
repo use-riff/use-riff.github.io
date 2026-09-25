@@ -1,13 +1,3 @@
-/* ---------------------------------------------------------------------------
- * riff — replace before publishing.
- * These two values are not injected at runtime (the site must work with
- * JavaScript disabled), they only document where to find and replace the
- * placeholder links. Update these AND every literal occurrence of the same
- * strings in index.html (nav, hero, open-source section, footer).
- * ------------------------------------------------------------------------- */
-const GITHUB_URL = "https://github.com/REPLACE-ME";
-const X_URL = "https://x.com/REPLACE-ME";
-
 (function () {
   "use strict";
 

@@ -153,7 +153,7 @@ button{font:inherit;}
   padding:18px var(--gutter);
   background:rgba(11,11,12,0);
   border-bottom:1px solid transparent;
-  transition:background var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease);
+  transition:background var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease), top var(--dur-med) var(--ease);
 }
 .site-header.is-scrolled{
   background:rgba(11,11,12,0.86);
@@ -386,38 +386,30 @@ button{font:inherit;}
 /* ==========================================================================
    NOTICE
    ========================================================================== */
-.notice{
+.notice-bar{
   background:var(--c-silver-bright);
   color:var(--c-ink);
-  padding:var(--sp-6) 0;
+  padding:10px var(--gutter);
+  font-size:0.9375rem;
+  line-height:1.5;
 }
-.notice .container{
-  display:grid;
-  grid-template-columns:160px minmax(0,1fr);
-  gap:var(--sp-6);
-  align-items:baseline;
-}
+.notice-bar p{max-width:var(--maxw); margin:0 auto;}
 .notice-label{
   font-family:var(--font-mono);
-  font-size:var(--fs-label);
+  font-size:12px;
   font-weight:700;
   text-transform:uppercase;
   letter-spacing:0.14em;
-  color:var(--c-ink);
-  display:flex;
-  align-items:center;
-  gap:var(--sp-3);
+  margin-right:var(--sp-3);
+  white-space:nowrap;
 }
 .notice-label::before{
   content:"";
-  width:8px; height:8px;
+  display:inline-block;
+  width:7px; height:7px;
   background:var(--c-ink);
-  flex:none;
-}
-.notice p{
-  max-width:72ch;
-  font-size:1.0625rem;
-  line-height:1.6;
+  margin-right:8px;
+  vertical-align:1px;
 }
 .notice-link{
   color:var(--c-ink);
@@ -426,11 +418,27 @@ button{font:inherit;}
   text-underline-offset:3px;
   text-decoration-thickness:1px;
 }
-.notice ::selection{background:var(--c-ink); color:var(--c-silver-bright);}
-.notice :focus-visible{outline-color:var(--c-ink);}
 @media (max-width:640px){
-  .notice .container{grid-template-columns:1fr; gap:var(--sp-3);}
+  .notice-bar{padding:8px var(--gutter); font-size:0.875rem; line-height:1.45;}
+  .notice-label{font-size:11px; margin-right:6px;}
 }
+.notice-bar ::selection{background:var(--c-ink); color:var(--c-silver-bright);}
+.notice-bar :focus-visible{outline-color:var(--c-ink); outline-offset:2px;}
+
+/* With JS the bar is pinned above the header until the first section is reached. */
+.js .notice-bar{
+  position:sticky;
+  top:0;
+  z-index:110;
+  transition:transform var(--dur-med) var(--ease), visibility 0s linear 0s;
+}
+.js .site-header{top:var(--notice-h, 0px);}
+.js.notice-hidden .notice-bar{
+  transform:translateY(-100%);
+  visibility:hidden;
+  transition:transform var(--dur-med) var(--ease), visibility 0s linear var(--dur-med);
+}
+.js.notice-hidden .site-header{top:0;}
 
 /* ==========================================================================
    SECTION SCAFFOLDING

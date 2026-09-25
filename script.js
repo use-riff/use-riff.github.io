@@ -21,6 +21,40 @@
     window.addEventListener("scroll", updateHeader, { passive: true });
   }
 
+  /* ---- top notice: pinned until the first section reaches the top ---- */
+  var notice = doc.querySelector("[data-notice]");
+  var firstSection = doc.getElementById("how-it-works");
+  if (notice && firstSection) {
+    var setNoticeHeight = function () {
+      root.style.setProperty("--notice-h", notice.offsetHeight + "px");
+    };
+    setNoticeHeight();
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(setNoticeHeight).observe(notice);
+    } else {
+      window.addEventListener("resize", setNoticeHeight);
+    }
+
+    var noticeHidden = null;
+    var noticeTicking = false;
+    var updateNotice = function () {
+      noticeTicking = false;
+      var threshold = notice.offsetHeight + (header ? header.offsetHeight : 0);
+      var hidden = firstSection.getBoundingClientRect().top <= threshold;
+      if (hidden !== noticeHidden) {
+        root.classList.toggle("notice-hidden", hidden);
+        noticeHidden = hidden;
+      }
+    };
+    window.addEventListener("scroll", function () {
+      if (!noticeTicking) {
+        noticeTicking = true;
+        requestAnimationFrame(updateNotice);
+      }
+    }, { passive: true });
+    updateNotice();
+  }
+
   /* ---- scroll reveals ---- */
   var revealEls = doc.querySelectorAll(".reveal");
   if (revealEls.length && "IntersectionObserver" in window) {

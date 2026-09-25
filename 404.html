@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>page not found — riff</title>
+<meta name="description" content="This page could not be found.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0c">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/hanken-grotesk-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<style>
+  .notfound{
+    min-height:70vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:var(--sp-9) 0;
+  }
+  .notfound .eyebrow{margin-bottom:var(--sp-6);}
+  .notfound h1{
+    font-size:clamp(4rem, 10vw, 9rem);
+    line-height:0.86;
+    color:var(--c-silver-bright);
+    margin-bottom:var(--sp-5);
+  }
+  .notfound p{
+    color:var(--c-muted);
+    font-size:var(--fs-lead);
+    max-width:44ch;
+    margin-bottom:var(--sp-7);
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="assets/riff-logo.webp" width="920" height="191" alt="riff" loading="eager" decoding="async">
+  </a>
+  <nav aria-label="Primary">
+    <ul class="nav-links">
+      <li><a href="index.html#roadmap">roadmap</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+  <section class="notfound">
+    <div class="container">
+      <p class="eyebrow">404 · signal lost</p>
+      <h1>no signal here.</h1>
+      <p>This page doesn't exist, or it moved. Head back to the main page to keep exploring riff.</p>
+      <a class="btn" href="index.html">back to riff</a>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-row">
+      <span class="footer-brand">riff</span>
+      <div class="footer-meta">
+        <span>open source.</span>
+        <span>building on solana.</span>
+        <span>&copy; 2026 riff.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

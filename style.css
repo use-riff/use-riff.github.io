@@ -384,6 +384,55 @@ button{font:inherit;}
 }
 
 /* ==========================================================================
+   NOTICE
+   ========================================================================== */
+.notice{
+  background:var(--c-silver-bright);
+  color:var(--c-ink);
+  padding:var(--sp-6) 0;
+}
+.notice .container{
+  display:grid;
+  grid-template-columns:160px minmax(0,1fr);
+  gap:var(--sp-6);
+  align-items:baseline;
+}
+.notice-label{
+  font-family:var(--font-mono);
+  font-size:var(--fs-label);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.14em;
+  color:var(--c-ink);
+  display:flex;
+  align-items:center;
+  gap:var(--sp-3);
+}
+.notice-label::before{
+  content:"";
+  width:8px; height:8px;
+  background:var(--c-ink);
+  flex:none;
+}
+.notice p{
+  max-width:72ch;
+  font-size:1.0625rem;
+  line-height:1.6;
+}
+.notice-link{
+  color:var(--c-ink);
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  text-decoration-thickness:1px;
+}
+.notice ::selection{background:var(--c-ink); color:var(--c-silver-bright);}
+.notice :focus-visible{outline-color:var(--c-ink);}
+@media (max-width:640px){
+  .notice .container{grid-template-columns:1fr; gap:var(--sp-3);}
+}
+
+/* ==========================================================================
    SECTION SCAFFOLDING
    ========================================================================== */
 section{position:relative;}

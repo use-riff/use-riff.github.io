@@ -284,6 +284,8 @@ button{font:inherit;}
   box-shadow:0 0 0 4px rgba(245,243,238,0.18);
 }
 .status.is-live{color:var(--c-silver-bright);}
+.status.is-done .dot{background:var(--c-silver);}
+.status.is-done{color:var(--c-silver);}
 
 /* ==========================================================================
    HERO
@@ -529,6 +531,15 @@ section{position:relative;}
 }
 
 /* ==========================================================================
+   PROGRESS — reuses the signal path
+   ========================================================================== */
+.progress{
+  padding:var(--sp-10) 0;
+  border-bottom:1px solid var(--c-graphite-2);
+}
+.progress .signal-step.is-done::before{background:var(--c-active); border-color:var(--c-active);}
+
+/* ==========================================================================
    PRINCIPLES — manifesto
    ========================================================================== */
 .principles{
@@ -643,6 +654,41 @@ section{position:relative;}
 @media (max-width:640px){
   .roadmap-item{grid-template-columns:1fr; gap:var(--sp-3);}
   .roadmap-num{font-size:2.4rem;}
+}
+
+/* ==========================================================================
+   STACK
+   ========================================================================== */
+.stack{
+  padding:var(--sp-10) 0;
+  border-bottom:1px solid var(--c-graphite-2);
+}
+.stack-list{
+  border-top:1px solid var(--c-graphite-2);
+}
+.stack-row{
+  display:grid;
+  grid-template-columns:minmax(0,4fr) minmax(0,8fr);
+  gap:var(--sp-6);
+  padding:var(--sp-5) 0;
+  border-bottom:1px solid var(--c-graphite-2);
+  align-items:baseline;
+}
+.stack-row dt{
+  font-family:var(--font-mono);
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  color:var(--c-silver-bright);
+}
+.stack-row dd{
+  margin:0;
+  color:var(--c-muted);
+  max-width:60ch;
+}
+
+@media (max-width:640px){
+  .stack-row{grid-template-columns:1fr; gap:var(--sp-2);}
 }
 
 /* ==========================================================================

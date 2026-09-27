@@ -91,6 +91,7 @@
         </div>
         <div class="hero-status-row">
           <span class="status is-live"><i class="dot" aria-hidden="true"></i>currently building on solana</span>
+          <span class="status"><i class="dot" aria-hidden="true"></i>testing on devnet</span>
         </div>
       </div>
 
@@ -186,6 +187,41 @@
     </div>
   </section>
 
+  <!-- ============================= PROGRESS ============================ -->
+  <section class="progress reveal" id="progress">
+    <div class="container">
+      <div class="section-head">
+        <h2>where riff is now.</h2>
+        <p class="section-note">Last updated september 2026.</p>
+      </div>
+
+      <div class="signal-path">
+        <div class="signal-step is-done">
+          <span class="signal-num">01 — done</span>
+          <h3>the core</h3>
+          <p>The program that runs Riff on Solana is written. It handles launching coins, trading, fee sharing, artist claims and charity payouts.</p>
+        </div>
+        <div class="signal-step is-done">
+          <span class="signal-num">02 — done</span>
+          <h3>tested</h3>
+          <p>Close to a hundred automated tests check every rule, including tests that try to break Riff the way an attacker would.</p>
+        </div>
+        <div class="signal-step">
+          <span class="signal-num">03 — running</span>
+          <h3>on devnet</h3>
+          <p>Riff runs on Solana devnet, a test network where nothing costs real money.</p>
+        </div>
+        <div class="signal-step">
+          <span class="signal-num">04 — next</span>
+          <h3>the app</h3>
+          <p>A website to launch and trade test coins, so anyone can try Riff before real money is involved.</p>
+        </div>
+      </div>
+
+      <p class="how-note"><strong>No real money is involved yet.</strong> Coins on devnet are test coins with no value. Riff has not launched a token.</p>
+    </div>
+  </section>
+
   <!-- ============================== ROADMAP ============================ -->
   <section class="roadmap reveal" id="roadmap">
     <div class="container">
@@ -201,31 +237,40 @@
           <div class="roadmap-num">01</div>
           <div class="roadmap-body">
             <h3>prototype</h3>
-            <p>Build the first working version of Riff on Solana, including coin creation, fee sharing and artist claims.</p>
+            <p>The first working version of Riff on Solana: coin creation, trading, fee sharing, artist claims and the charity fallback.</p>
+            <span class="status is-done"><i class="dot" aria-hidden="true"></i>done</span>
+          </div>
+        </div>
+
+        <div class="roadmap-item is-active">
+          <div class="roadmap-num">02</div>
+          <div class="roadmap-body">
+            <h3>fair launches</h3>
+            <p>Every coin has a fixed supply and no mint or freeze controls. The creator's own buy at launch is capped, and liquidity is locked once a coin sells out.</p>
+            <span class="status is-done"><i class="dot" aria-hidden="true"></i>done</span>
+          </div>
+        </div>
+
+        <div class="roadmap-item is-active">
+          <div class="roadmap-num">03</div>
+          <div class="roadmap-body">
+            <h3>public testnet</h3>
+            <p>Riff is running on Solana devnet. Next is a web app so the community can test it and tell us what to improve.</p>
             <span class="status is-live"><i class="dot" aria-hidden="true"></i>building</span>
           </div>
         </div>
 
         <div class="roadmap-item">
-          <div class="roadmap-num">02</div>
+          <div class="roadmap-num">04</div>
           <div class="roadmap-body">
-            <h3>fair launches</h3>
-            <p>Introduce Riff's rug-resistant launch standard with transparent allocations, locked liquidity and creator protections.</p>
+            <h3>security audit</h3>
+            <p>An independent security firm reviews Riff before real money is involved. Our own review and attack testing are already done.</p>
             <span class="status"><i class="dot" aria-hidden="true"></i>next</span>
           </div>
         </div>
 
         <div class="roadmap-item">
-          <div class="roadmap-num">03</div>
-          <div class="roadmap-body">
-            <h3>public testnet</h3>
-            <p>Open Riff for community testing, improve the product and complete security reviews.</p>
-            <span class="status"><i class="dot" aria-hidden="true"></i>later</span>
-          </div>
-        </div>
-
-        <div class="roadmap-item">
-          <div class="roadmap-num">04</div>
+          <div class="roadmap-num">05</div>
           <div class="roadmap-body">
             <h3>mainnet beta</h3>
             <p>Launch a limited public beta on Solana with the first community coins and artist beneficiaries.</p>
@@ -234,7 +279,7 @@
         </div>
 
         <div class="roadmap-item">
-          <div class="roadmap-num">05</div>
+          <div class="roadmap-num">06</div>
           <div class="roadmap-body">
             <h3>robinhood chain</h3>
             <p>After the Solana launch, build and launch Riff on Robinhood Chain.</p>
@@ -243,7 +288,7 @@
         </div>
 
         <div class="roadmap-item">
-          <div class="roadmap-num">06</div>
+          <div class="roadmap-num">07</div>
           <div class="roadmap-body">
             <h3>expansion</h3>
             <p>Add more artist tools, charity partnerships and support for additional networks.</p>
@@ -251,6 +296,51 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============================== STACK ============================== -->
+  <section class="stack reveal" id="stack">
+    <div class="container">
+      <div class="section-head">
+        <h2>what it's built with.</h2>
+        <p class="section-note">For the curious. You don't need any of this to use Riff.</p>
+      </div>
+
+      <dl class="stack-list">
+        <div class="stack-row">
+          <dt>solana</dt>
+          <dd>The blockchain Riff runs on. Fast and cheap enough for small trades.</dd>
+        </div>
+        <div class="stack-row">
+          <dt>rust &amp; anchor</dt>
+          <dd>The Riff program itself. Launch rules, pricing and fee splits run on-chain, not on our servers.</dd>
+        </div>
+        <div class="stack-row">
+          <dt>token-2022</dt>
+          <dd>Solana's token standard. Every coin has one billion tokens, fixed: nobody can mint more or freeze anyone's tokens.</dd>
+        </div>
+        <div class="stack-row">
+          <dt>bonding curve</dt>
+          <dd>How a new coin is priced: the price rises as people buy. Every trade currently pays a 1% fee, and half of it is reserved for the artist.</dd>
+        </div>
+        <div class="stack-row">
+          <dt>raydium</dt>
+          <dd>When a coin sells out on its curve, its liquidity moves to a Raydium pool and is locked for good.</dd>
+        </div>
+        <div class="stack-row">
+          <dt>typescript</dt>
+          <dd>Our deploy tools today, and the web app we're building next.</dd>
+        </div>
+        <div class="stack-row">
+          <dt>litesvm &amp; github actions</dt>
+          <dd>Every change runs the full test suite automatically, including against Raydium's real program.</dd>
+        </div>
+        <div class="stack-row">
+          <dt>squads</dt>
+          <dd>Planned: admin keys held by a multisig, so no single person controls Riff.</dd>
+        </div>
+      </dl>
     </div>
   </section>
 

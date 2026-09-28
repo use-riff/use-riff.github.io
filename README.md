@@ -6,7 +6,8 @@ support; part of the platform fees is reserved for that artist, who can verify
 and claim it. If the artist declines or the claim window expires, the reserved
 fees go to an independent music charity instead.
 
-Riff does not exist as a live product yet. This site documents the project's
+Riff is not on mainnet yet. A public demo runs on Solana devnet with test
+SOL: https://riff-gold-nu.vercel.app. This site documents the project's
 direction and roadmap while it is in development.
 
 Live site: https://use-riff.github.io/
